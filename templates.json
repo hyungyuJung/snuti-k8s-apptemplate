@@ -1,0 +1,25 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 3,
+      "title": "GPU 연구실 공용 개발 서버",
+      "description": "GPU, CPU, 메모리 설정을 통해 개인 개발 파드를 생성합니다. (SSH 포함)",
+      "administrator_only": false,
+      "name": "gpu-dev-server",
+      "repository": {
+        "url": "https://github.com/your-repo/k8s-templates",
+        "stackfile": "gpu-pod-template.yaml"
+      },
+      "env": [
+        { "name": "POD_NAME", "label": "1. 파드 이름", "default": "my-gpu-pod" },
+        { "name": "IMAGE", "label": "2. 도커 이미지", "default": "nvidia/cuda:12.1.0-base-ubuntu22.04" },
+        { "name": "GPU_COUNT", "label": "3. GPU 개수", "default": "1" },
+        { "name": "CPU_LIMIT", "label": "4. CPU 코어 제한", "default": "2" },
+        { "name": "MEM_LIMIT", "label": "5. 메모리 제한 (GiB)", "default": "4" },
+        { "name": "ROOT_PASSWORD", "label": "6. SSH 루트 비밀번호", "default": "root123" },
+        { "name": "PVC_NAME", "label": "7. 사용할 PVC 이름 (없으면 none)", "default": "none" }
+      ]
+    }
+  ]
+}
