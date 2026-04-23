@@ -1,0 +1,1 @@
+# snuti-k8s-apptemplate
